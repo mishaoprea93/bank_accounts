@@ -1,0 +1,17 @@
+<h1>Log into your account:</h1>
+<br>
+<br>
+<span class="erori">@ViewBag.err</span>
+<form action="login" method="Post">
+    <label for="email">Email:</label>
+    <input type="email" name="email"><br><br>
+    <label for="password">Password:</label>
+    <input type="password" name="password"><br><br>
+    <button type="submit">Log In</button> Do not have an account?<button><a href="/">Register</a></button>
+</form>
+
+<style>
+    .erori {
+        color: red;
+    }
+</style>

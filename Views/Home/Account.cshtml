@@ -1,0 +1,32 @@
+<h1>Welcome to your account,@ViewBag.session || <a href="/logout">LogOut!</a></h1>
+<br>
+<h3>Current Balance:@ViewBag.lastrec.balance $</h3>
+<form action="add-record" method="post">
+    <label for="Amount">Deposit/Withdraw:</label><input type="number" name="Amount" min="-@ViewBag.lastrec.balance">
+    <button type="submit">Submit</button>
+</form>
+<br>
+<table class="table" id="wide">
+    <thead>
+        <tr>
+            <th>Amount:</th>
+            <th>Date:</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{if(@ViewBag.records.Count!=1){ @foreach(var rec in ViewBag.records){
+        <tr>
+            <td>@rec.record $</td>
+            <td>@rec.created_at</td>
+        </tr>
+        } }}
+    </tbody>
+</table>
+
+
+<style>
+    #width {
+        width: 500px;
+        display: inline-block;
+    }
+</style>
